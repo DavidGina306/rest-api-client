@@ -1,22 +1,30 @@
 # main-rest-api
 
-## Project setup
+Aplicação cliente para consumo de api Rest(Processo avaliativo).
+
+## Requisitos 
+
+Node.js: 10^
+NPM: última versão estavel
+
+
+## Configuração do projeto
+Execute o comando abaixo para instalar as dependencias do projeto.
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Executar o projeto em modo de desenvolvimento
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar e gerar build do projeto
 
+Altere a variável HOST_API no arquivo `env.json` na raiz do projeto para apontar para o host funcional.
 
-Change the HOST_API variable in the `env.json` file at the root of the project to point to the functional host.
-
-Run the command:
+Execute o camando abaixo:
 ```
 npm run build
 ```
-this command will generate a `dist` folder, copy this folder to web server(apache, nginx, tomcat).
+Este comando vai gerar uma pasta`dist` na raiz do projeto com os arquivos compilados para produção, copie esta página para o web server(apache, nginx, tomcat).
