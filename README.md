@@ -4,8 +4,8 @@ Aplicação cliente para consumo de api Rest(Processo avaliativo).
 
 ## Requisitos 
 
-Node.js: 10^
-NPM: última versão estavel
+- Node.js: 10^
+- NPM: última versão estavel
 
 
 ## Configuração do projeto
@@ -27,4 +27,5 @@ Execute o camando abaixo:
 ```
 npm run build
 ```
-Este comando vai gerar uma pasta`dist` na raiz do projeto com os arquivos compilados para produção, copie esta página para o web server(apache, nginx, tomcat).
+Este comando vai gerar uma pasta`dist` na raiz do projeto com os arquivos compilados para produção,\
+copie esta página para o web server(apache, nginx, tomcat).
