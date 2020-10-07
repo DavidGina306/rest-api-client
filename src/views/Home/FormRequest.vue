@@ -15,8 +15,10 @@
                              :required="true"/>
                 </b-form-group>
                 <b-form-group class="text-right">
-                    <b-button type="submit">
-                        <i class="fa fa-save"></i> Enviar
+                    <b-button type="submit" :disabled="loading">
+                        <b-spinner v-if="loading" label="Spinning" small></b-spinner>
+                        <i class="fa fa-save" v-else></i>
+                        Enviar
                     </b-button>
                 </b-form-group>
 
@@ -33,6 +35,7 @@
         directives: {money: VMoney},
         data() {
             return {
+                loading: false,
                 fields: {
                     name: '',
                     quantity: 0,
@@ -50,7 +53,7 @@
         methods: {
             async edit(id) {
                 let {data} = await axios.get(`products/product/${id}`);
-                data.price  = parseFloat(data.price).toFixed(2);
+                data.price = parseFloat(data.price).toFixed(2);
                 this.fields = data;
                 this.$bvModal.show('product_modal');
             },
@@ -75,6 +78,7 @@
             },
             async send() {
                 try {
+                    this.loading = true;
                     this.fields.price = parseFloat(String(this.fields.price).replace('.', '').replace(',', '.')).toFixed(2)
                     await axios('products/product', {
                         method: this.fields?.id ? 'put' : 'post',
@@ -88,6 +92,8 @@
                 } catch (e) {
                     console.log(e);
                     this.$toast.error("Falha na solicitação");
+                } finally {
+                    this.loading = false;
                 }
             }
         }
