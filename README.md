@@ -1,6 +1,6 @@
 # main-rest-api
 
-Aplicação cliente para consumo de api Rest(Processo avaliativo).
+Aplicação cliente para consumo de API Rest(Processo avaliativo).
 
 ## Requisitos 
 
